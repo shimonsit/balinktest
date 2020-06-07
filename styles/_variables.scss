@@ -1,0 +1,40 @@
+/* COLORS */
+$blue:      #3E51B6;
+$grey:      #ADADAD;
+$white:     #fff;
+$black:     #000;
+$red: red;
+
+$containerWidth:  996px;
+$boxShadow : #ADADAD;
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}  
+}
+$tablet_size:"1024px";
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin autoprefixer($property, $value){
+   #{$property}: $value;
+   #{'-webkit-'+$property}: $value;
+   #{'-moz-'+$property}: $value;
+   #{'-o-'+$property}: $value;
+   #{'-ms-'+$property}: $value;
+}
+@mixin box-shadow($top, $left, $blur,$spred, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $spred $color;
+    -moz-box-shadow:inset $top $left $blur $spred $color;
+    box-shadow:inset $top $left $blur $spred $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $spred $color;
+    -moz-box-shadow: $top $left $blur $spred $color;
+    box-shadow: $top $left $blur $spred $color;
+  }
+}
